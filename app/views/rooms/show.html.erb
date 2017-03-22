@@ -1,0 +1,11 @@
+<h3>Count of msg in room: <span id="room_<%=@room.id%>_msg_count"><%= @room.messages.count %></span></h3>
+<h1>Chat room</h1>
+<div id="messages">
+  <%= render @messages %>
+</div>
+<form>
+  <label>Say something:</label><br>
+  <%= hidden_field_tag 'room_id', @room.id, id: 'room_id' %>
+  <input type="text" data-behavior="room_speaker">
+</form>
+
