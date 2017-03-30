@@ -1,3 +1,4 @@
+#App.room =App.cable.subscriptions.create { channel: "RoomChannel", room: "Best Room" }, # send message in ONE channel
 App.room = App.cable.subscriptions.create "RoomChannel",
   connected: ->
     # Called when the subscription is ready for use on the server

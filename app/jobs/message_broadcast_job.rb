@@ -2,7 +2,8 @@ class MessageBroadcastJob < ApplicationJob
   queue_as :default
 
   def perform(message)
-    ActionCable.server.broadcast "room_channel_id_#{message.room_id}", message: render_message(message)
+    # ActionCable.server.broadcast "Best Room", message: render_message(message) # send message in ONE channel
+    ActionCable.server.broadcast "room_id_#{message.room_id}", message: render_message(message)
   end
 
   private
